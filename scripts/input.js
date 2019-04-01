@@ -1,56 +1,74 @@
 console.log("ready2")
 
+let tempStr = []
+let conStr = []
+let textArr = []
+
 let assignChar = str => {
 	const charLib = {
 		oi: "A",
-		iooo: "B"
+		iooo: "B",
+		ioio: "C",
+		ioo: "D",
+		o: "E",
+		ooio: "F",
+		iio: "G",
+		oooo: "H",
+		oo: "I",
+		oiii: "J",
+		ioi: "K",
+		oioo: "L",
+		ii: "M",
+		io: "N",
+		iii: "O",
+		oiio: "P",
+		iioi: "Q",
+		oio: "R",
+		ooo: "S",
+		i: "T",
+		ooi: "U",
+		oooi: "V",
+		oii: "W",
+		iooi: "X",
+		ioii: "Y",
+		iioo: "Z"
 	}
-	console.log(charLib[str])
-	return charLib[str]
-	/* 
-	let decipher = ""
-	for (let i = 0; i < str.length; i++) {
-		decipher += charLib[str[i]]
-	}
-	return decipher */
+	conStr.push(charLib[str])
 }
-
-console.log(assignChar("iooo"))
-
-let tempStr = []
-let conStr = []
-let outStr = []
-
 Mousetrap.bind("o", function() {
 	console.log("dit")
-	addDit()
+	//snare.play()
+	//addDit()
 	tempStr.push("o")
 }) //Binds i to dit and pushes 0 to tempStr
 
 Mousetrap.bind("i", function() {
 	console.log("dah")
+	//hats.play()
+	//addDah()
 	tempStr.push("i")
 }) //Binds o to dah and pushes 1 to tempStr
 
 Mousetrap.bind("space", function() {
 	console.log("space")
+	kick.play()
 	assignChar(tempStr.join(""))
-	conStr.push(tempStr.join(""))
+	document.getElementById("output").innerText = conStr.join("")
 	tempStr = []
 }) //Binds space to nextChar
 
 Mousetrap.bind("s", function() {
-	if (conStr === 0) {
-		console.log("empty")
-	} else {
-		outStr.push(conStr.join(""))
-		conStr = []
-	}
-}) //binds s to newWord (no empties)
-
+	textArr.push(conStr.join(""))
+	document.getElementById("output").innerText = textArr.join(" ")
+})
+//binds s to newWord (no empties)
+Mousetrap.bind("backspace", function() {
+	document.querySelector("inputField")
+	inputField.removeChild(".div")
+})
 Mousetrap.bind("q", function() {
 	console.log("checking...")
 	console.log(tempStr)
 	console.log(conStr)
-	console.log(outStr)
+	console.log(textArr)
 })
