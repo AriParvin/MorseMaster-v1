@@ -2,7 +2,6 @@ console.log("ready2")
 
 let tempStr = []
 let conStr = []
-let textArr = []
 
 let assignChar = str => {
 	const charLib = {
@@ -31,7 +30,9 @@ let assignChar = str => {
 		oii: "W",
 		iooi: "X",
 		ioii: "Y",
-		iioo: "Z"
+		iioo: "Z",
+		iiiii: "0",
+		oiiii: "1"
 	}
 	conStr.push(charLib[str])
 }
@@ -51,15 +52,17 @@ Mousetrap.bind("i", function() {
 
 Mousetrap.bind("space", function() {
 	console.log("space")
-	kick.play()
+	//kick.play()
 	assignChar(tempStr.join(""))
 	document.getElementById("output").innerText = conStr.join("")
 	tempStr = []
 }) //Binds space to nextChar
 
 Mousetrap.bind("s", function() {
-	textArr.push(conStr.join(""))
+	conStr.push(" ")
+	/* textArr.push(conStr.join(""))
 	document.getElementById("output").innerText = textArr.join(" ")
+	conStr = [] */
 })
 //binds s to newWord (no empties)
 Mousetrap.bind("backspace", function() {
