@@ -3,6 +3,39 @@
 }
 body {
 	display: flex;
-	padding: 0 25vw;
 	width: 100vw;
+	justify-content: space-around;
+}
+.scalp {
+	width: 100vw;
+	justify-content: center;
+}
+h1 {
+	text-align: center;
+	font-size: 2em;
+}
+#inputField {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100vw;
+	padding: 0 25vw;
+	justify-content: flex-start;
+}
+#dit {
+	background-color: black;
+	width: 30px;
+	height: 30px;
+	margin: 0 10px 40px 0;
+	border-radius: 15px;
+}
+#dah {
+	background-color: black;
+	width: 90px;
+	height: 30px;
+	margin: 0 10px 40px 0;
+	border-radius: 15px;
+}
+#space {
+	background-color: white;
+	width: 30px;
 }

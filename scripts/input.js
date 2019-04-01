@@ -1,12 +1,21 @@
 console.log("ready2")
 
-function assignChar(i) {
+let assignChar = str => {
 	const charLib = {
-		"0": "E",
-		"00": "I"
+		oi: "A",
+		iooo: "B"
 	}
-	return i === charLib[i]
+	console.log(charLib[str])
+	return charLib[str]
+	/* 
+	let decipher = ""
+	for (let i = 0; i < str.length; i++) {
+		decipher += charLib[str[i]]
+	}
+	return decipher */
 }
+
+console.log(assignChar("iooo"))
 
 let tempStr = []
 let conStr = []
@@ -14,24 +23,31 @@ let outStr = []
 
 Mousetrap.bind("o", function() {
 	console.log("dit")
-	tempStr.push(0)
+	addDit()
+	tempStr.push("o")
 }) //Binds i to dit and pushes 0 to tempStr
+
 Mousetrap.bind("i", function() {
 	console.log("dah")
-	tempStr.push(1)
+	tempStr.push("i")
 }) //Binds o to dah and pushes 1 to tempStr
-Mousetrap.bind("s", function() {
-	conStr.forEach(i => {
-		assignChar(i)
-	})
-	outStr.push(conStr.join(""))
-	conStr = [] //binds s  to join the char-strings into one word and to jump to the next wordi
-})
+
 Mousetrap.bind("space", function() {
 	console.log("space")
+	assignChar(tempStr.join(""))
 	conStr.push(tempStr.join(""))
 	tempStr = []
-}) //Binds space to space...duh
+}) //Binds space to nextChar
+
+Mousetrap.bind("s", function() {
+	if (conStr === 0) {
+		console.log("empty")
+	} else {
+		outStr.push(conStr.join(""))
+		conStr = []
+	}
+}) //binds s to newWord (no empties)
+
 Mousetrap.bind("q", function() {
 	console.log("checking...")
 	console.log(tempStr)
