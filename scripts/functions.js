@@ -1,33 +1,75 @@
 console.log("ready3")
 
+let randomCharacter = ""
+let morseCode = ""
 const gameTypes = {
 	freePlay: false,
 	morseMouse: false,
 	morseMaster: false
 }
 
-const startMorseMouse = () => {
-	gameTypes.morseMouse = true
-	var elem = document.querySelector(".container")
-	elem.remove()
+const randomizeChar = () => {
+	randomCharacter = randomChars(charLib)
+	morseCode = getKeyByValue(charLib, randomCharacter)
+}
 
-	/* var outputFieldVar = document.createElement("div")
-     document.body.appendChild(gameBoardVar)  */
+const randomChars = obj => {
+		var chars = Object.keys(obj)
+		return obj[chars[(chars.length * Math.random()) << 0]]
+	}
+
+const createGameBoard=()=>{
+	/* Removes container */
+	var containerDiv = document.querySelector(".container")
+	containerDiv.remove()
 
 	var gameBoardVar = document.createElement("div")
-	gameBoardVar.innerHTML = "CLICK ME"
-	gameBoardVar.style.height = "800px"
-	gameBoardVar.style.width = "1000px"
-	gameBoardVar.style.backgroundColor = "papayawhip"
 	gameBoardVar.classList.add("gameBoard")
-
 	document.body.appendChild(gameBoardVar)
-
-	var node = document.getElementsByClassName("gameBoard").lastChild
-	document.getElementById("myList1").appendChild(node)
 
 	var inputFieldVar = document.createElement("div")
-	document.body.appendChild(gameBoardVar)
+	inputFieldVar.id="inputField"
+	gameBoardVar.appendChild(inputFieldVar)
+
+	
+}
+
+	const getKeyByValue = (object, value) => {
+		console.log(Object.keys(object).find(key => object[key] === value))
+  		return Object.keys(object).find(key => object[key] === value);
+	}
+
+
+const startMorseMouse = () => {
+	gameTypes.morseMouse = true
+	createGameBoard()
+	randomizeChar()
+	document.getElementById("inputField").innerText = randomCharacter
+
+	var ditVar = document.createElement("div")
+	ditVar.id="dit"
+	/* ditVar.style.height = "200px" */
+	var dahVar = document.createElement("div")
+	dahVar.id="dah"
+
+	
+
+	
+
+	setTimeout(() => {
+		console.log(morseCode)
+		for (let i of morseCode){
+			if (i == "i"){
+				console.log("i")
+				document.querySelector(".gameBoard").appendChild(dahVar.cloneNode(true))
+			}
+			if (i == "o"){
+				console.log("o")
+				document.querySelector(".gameBoard").appendChild(ditVar.cloneNode(true))
+			}
+		}
+
+	}, 5000);
 }
 
 // const noEmpties = function(arr) {

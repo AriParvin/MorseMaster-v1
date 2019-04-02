@@ -1,9 +1,8 @@
 console.log("ready2")
-
+let points = 0
 let tempStr = []
 let conStr = []
 
-let assignChar = str => {
 	const charLib = {
 		oi: "A",
 		iooo: "B",
@@ -46,6 +45,7 @@ let assignChar = str => {
 		oiiiio: "'",
 		ooiioo: "?"
 	}
+let assignChar = str => {
 	conStr.push(charLib[str])
 }
 Mousetrap.bind("o", function() {
@@ -63,7 +63,14 @@ Mousetrap.bind("i", function() {
 Mousetrap.bind("space", function() {
 	console.log("space")
 	assignChar(tempStr.join(""))
-	document.getElementById("output").innerText = conStr.join("")
+
+	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */ 
+
+	if (conStr[conStr.length-1] == randomCharacter){
+		points++
+		randomizeChar()
+		document.getElementById("inputField").innerText = randomCharacter
+	}
 	tempStr = []
 	wb1.play()
 }) //Binds space to nextChar

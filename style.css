@@ -102,3 +102,10 @@ body {
 	text-decoration: none;
 	color: red;
 }
+
+
+.gameBoard{
+height: 800px;
+width: 1000px;
+background-color: papayawhip
+}
