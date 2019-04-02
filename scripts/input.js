@@ -32,7 +32,19 @@ let assignChar = str => {
 		ioii: "Y",
 		iioo: "Z",
 		iiiii: "0",
-		oiiii: "1"
+		oiiii: "1",
+		ooiii: "2",
+		oooii: "3",
+		ooooi: "4",
+		ooooo: "5",
+		ioooo: "6",
+		iiooo: "7",
+		iiioo: "8",
+		iiiio: "9",
+		oioioi: ".",
+		iiooii: ",",
+		oiiiio: "'",
+		ooiioo: "?"
 	}
 	conStr.push(charLib[str])
 }
@@ -66,12 +78,10 @@ Mousetrap.bind("s", function() {
 })
 //binds s to newWord (no empties)
 Mousetrap.bind("backspace", function() {
-	document.querySelector("inputField")
-	inputField.removeChild(".div")
+	conStr.pop("")
 })
 Mousetrap.bind("q", function() {
 	console.log("checking...")
 	console.log(tempStr)
 	console.log(conStr)
-	console.log(textArr)
 })
