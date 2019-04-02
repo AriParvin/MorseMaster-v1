@@ -10,31 +10,44 @@
 		<link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300|Varela+Round" rel="stylesheet" />
 	</head>
 	<body>
-		<div class="header">
-			<h1>MORSE MASTER</h1>
-		</div>
-		<div class="selection">
-			<button id="howto" onclick="showDesc()">How to play?</button>
-			<div id="howtoDesc">
-				Curabitur turpis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Sed cursus
-				turpis vitae tortor. Morbi nec metus. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
-				Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. In
-				turpis. Quisque id odio. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Proin
-				sapien ipsum, porta a, auctor quis, euismod ut, mi. Vivamus euismod mauris. Vivamus consectetuer
-				hendrerit lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-				egestas. Morbi nec metus. Ut varius tincidunt libero.
+		<div class="container">
+			<div class="header">
+				<h1>MORSE MASTER</h1>
 			</div>
-			<button id="freeplay">Free Play</button>
-			<button id="morsemouse">Morse Mouse</button>
-			<button id="morsemaster">Morse Master</button>
-		</div>
+			<div class="selection">
+				<button id="howto" onclick="showDesc()">How to play?</button>
+				<div id="howtoDesc">
+					<ul>
+						<li>
+							<div id="desc-o">o</div>
+							for Period
+						</li>
+						<li>
+							<div id="desc-i">i</div>
+							for Dash
+						</li>
+						<li>
+							<div id="desc-space">space</div>
+							for next Letter
+						</li>
+						<li>
+							<div id="desc-s">s</div>
+							for next Word
+						</li>
+					</ul>
+				</div>
+				<button onclick="startFreePlay()" id="freeplay">Free Play</button>
+				<button onclick="startMorseMouse()" id="morsemouse">Morse Mouse</button>
+				<button onclick="startMorseMaster()" id="morsemaster">Morse Master</button>
+			</div>
 
-		<ul class="foot">
-			<p>
-				a Morse-Code learning experience, with inspiration and some assets from this
-				<a href="https://experiments.withgoogle.com/collection/morse">Chrome Experiment</a>
-			</p>
-		</ul>
+			<ul class="foot">
+				<p>
+					a Morse-Code learning experience, with inspiration and some assets from this
+					<a href="https://experiments.withgoogle.com/collection/morse">Chrome Experiment</a>
+				</p>
+			</ul>
+		</div>
 		<div id="inputField">
 			<div id="output"></div>
 		</div>

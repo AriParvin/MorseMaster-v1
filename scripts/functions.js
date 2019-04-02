@@ -1,17 +1,49 @@
 console.log("ready3")
 
+const gameTypes = {
+	freePlay: false,
+	morseMouse: false,
+	morseMaster: false
+}
+
+const startMorseMouse = () => {
+	gameTypes.morseMouse = true
+	var elem = document.querySelector(".container")
+	elem.remove()
+
+	/* var outputFieldVar = document.createElement("div")
+     document.body.appendChild(gameBoardVar)  */
+
+	var gameBoardVar = document.createElement("div")
+	gameBoardVar.innerHTML = "CLICK ME"
+	gameBoardVar.style.height = "800px"
+	gameBoardVar.style.width = "1000px"
+	gameBoardVar.style.backgroundColor = "papayawhip"
+	gameBoardVar.classList.add("gameBoard")
+
+	document.body.appendChild(gameBoardVar)
+
+	var node = document.getElementsByClassName("gameBoard").lastChild
+	document.getElementById("myList1").appendChild(node)
+
+	var inputFieldVar = document.createElement("div")
+	document.body.appendChild(gameBoardVar)
+}
+
 // const noEmpties = function(arr) {
 // 	var x = tempStr.filter(function(el) {
 // 		return el != null
 // 	})
 // 	return x
 // }
+
 function showDesc() {
 	let x = document.getElementById("howtoDesc")
-	if (x.style.display === "none") {
-		x.style.display = "flex"
+	if (x.style.opacity === "0") {
+		x.style.opacity = 1
 	} else {
-		x.style.display = "none"
+		console.log("hello")
+		x.style.opacity = 0
 	}
 }
 var period = new Audio("../assets/samples/period.mp3")
