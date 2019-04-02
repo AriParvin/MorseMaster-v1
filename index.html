@@ -14,36 +14,39 @@
 			<div class="header">
 				<h1>MORSE MASTER</h1>
 			</div>
-			<div class="selection">
-				<button id="howto" onclick="showDesc()">How to play?</button>
+			<div class="nav">
+				<div class="something"></div>
+				<div class="selection">
+					<button id="howto" onclick="showDesc()">Keys</button>
+					<button onclick="startFreePlay()" id="freeplay">Free Play</button>
+					<button onclick="startMorseMouse()" id="morsemouse">Morse Mouse</button>
+					<button onclick="startMorseMaster()" id="morsemaster">Morse Master</button>
+				</div>
 				<div id="howtoDesc">
 					<ul>
 						<li>
 							<div id="desc-o">o</div>
-							for Period
+							<span>for Period</span>
 						</li>
 						<li>
 							<div id="desc-i">i</div>
-							for Dash
+							<span>for Dash</span>
 						</li>
 						<li>
-							<div id="desc-space">space</div>
-							for next Letter
+							<div id="desc-space">_</div>
+							<span>for next Letter</span>
 						</li>
 						<li>
 							<div id="desc-s">s</div>
-							for next Word
+							<span>for next Word</span>
 						</li>
 					</ul>
 				</div>
-				<button onclick="startFreePlay()" id="freeplay">Free Play</button>
-				<button onclick="startMorseMouse()" id="morsemouse">Morse Mouse</button>
-				<button onclick="startMorseMaster()" id="morsemaster">Morse Master</button>
 			</div>
 
 			<ul class="foot">
 				<p>
-					a Morse-Code learning experience, with inspiration and some assets from this
+					a Morse-Code learning experience, with inspiration from this
 					<a href="https://experiments.withgoogle.com/collection/morse">Chrome Experiment</a>
 				</p>
 			</ul>

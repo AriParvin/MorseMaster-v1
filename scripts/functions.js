@@ -14,11 +14,11 @@ const randomizeChar = () => {
 }
 
 const randomChars = obj => {
-		var chars = Object.keys(obj)
-		return obj[chars[(chars.length * Math.random()) << 0]]
-	}
+	var chars = Object.keys(obj)
+	return obj[chars[(chars.length * Math.random()) << 0]]
+}
 
-const createGameBoard=()=>{
+const createGameBoard = () => {
 	/* Removes container */
 	var containerDiv = document.querySelector(".container")
 	containerDiv.remove()
@@ -28,17 +28,14 @@ const createGameBoard=()=>{
 	document.body.appendChild(gameBoardVar)
 
 	var inputFieldVar = document.createElement("div")
-	inputFieldVar.id="inputField"
+	inputFieldVar.id = "inputField"
 	gameBoardVar.appendChild(inputFieldVar)
-
-	
 }
 
-	const getKeyByValue = (object, value) => {
-		console.log(Object.keys(object).find(key => object[key] === value))
-  		return Object.keys(object).find(key => object[key] === value);
-	}
-
+const getKeyByValue = (object, value) => {
+	console.log(Object.keys(object).find(key => object[key] === value))
+	return Object.keys(object).find(key => object[key] === value)
+}
 
 const startMorseMouse = () => {
 	gameTypes.morseMouse = true
@@ -47,45 +44,32 @@ const startMorseMouse = () => {
 	document.getElementById("inputField").innerText = randomCharacter
 
 	var ditVar = document.createElement("div")
-	ditVar.id="dit"
+	ditVar.id = "dit"
 	/* ditVar.style.height = "200px" */
 	var dahVar = document.createElement("div")
-	dahVar.id="dah"
-
-	
-
-	
+	dahVar.id = "dah"
 
 	setTimeout(() => {
 		console.log(morseCode)
-		for (let i of morseCode){
-			if (i == "i"){
+		for (let i of morseCode) {
+			if (i == "i") {
 				console.log("i")
 				document.querySelector(".gameBoard").appendChild(dahVar.cloneNode(true))
 			}
-			if (i == "o"){
+			if (i == "o") {
 				console.log("o")
 				document.querySelector(".gameBoard").appendChild(ditVar.cloneNode(true))
 			}
 		}
-
-	}, 5000);
+	}, 5000)
 }
-
-// const noEmpties = function(arr) {
-// 	var x = tempStr.filter(function(el) {
-// 		return el != null
-// 	})
-// 	return x
-// }
-
 function showDesc() {
 	let x = document.getElementById("howtoDesc")
-	if (x.style.opacity === "0") {
-		x.style.opacity = 1
+	if (x.style.opacity === "100") {
+		x.style.opacity = 0
 	} else {
 		console.log("hello")
-		x.style.opacity = 0
+		x.style.opacity = 100
 	}
 }
 var period = new Audio("../assets/samples/period.mp3")
