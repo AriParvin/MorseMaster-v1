@@ -4,15 +4,25 @@
 body {
 	display: flex;
 	width: 100vw;
+	flex-direction: column;
 	justify-content: space-around;
+	font-family: "M PLUS Rounded 1c", sans-serif;
 }
 .scalp {
 	width: 100vw;
 	justify-content: center;
 }
-h1 {
+.header h1 {
+	font-family: "Varela Round", sans-serif;
 	text-align: center;
-	font-size: 2em;
+	letter-spacing: 0.5em;
+	font-size: 3em;
+	padding: 0;
+}
+.underline {
+	display: flex;
+	width: 100vw;
+	justify-content: space-around;
 }
 #output {
 	display: flex;
@@ -38,4 +48,20 @@ h1 {
 #space {
 	background-color: white;
 	width: 30px;
+}
+.selection {
+	display: flex;
+	flex-flow: column wrap;
+	height: 300px;
+	align-content: space-around;
+	justify-content: space-around;
+}
+.selection button {
+	font-family: "Varela Round", sans-serif;
+	color: white;
+	background-color: black;
+	font-size: 20px;
+	width: 200px;
+	height: 50px;
+	border-radius: 25px;
 }
