@@ -6,13 +6,24 @@ console.log("ready3")
 // 	})
 // 	return x
 // }
-function play() {
-	var hats = document.getElementById("hats")
-	var snare = document.getElementById("snare")
-	var kick = document.getElementById("kick")
-	//var wb1 = document.getElementById("wb1")
-	//var wb2 = document.getElementById("wb2")
+function showDesc() {
+	let x = document.getElementById("howtoDesc")
+	if (x.style.display === "none") {
+		x.style.display = "flex"
+	} else {
+		x.style.display = "none"
+	}
 }
+var period = new Audio("../assets/samples/period.mp3")
+period.load()
+var dash = new Audio("../assets/samples/dash.mp3")
+dash.load()
+var wb1 = new Audio("../assets/samples/Woodblock 1 copy.wav")
+wb1.load()
+var snr = new Audio("../assets/samples/Snare 10 copy.wav")
+snr.load()
+var bdr = new Audio("../assets/samples/Kick 17.wav")
+bdr.load()
 
 const addDit = function() {
 	var dit = document.createElement("div")

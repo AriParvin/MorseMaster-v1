@@ -18,6 +18,10 @@ body {
 	letter-spacing: 0.5em;
 	font-size: 3em;
 	padding: 0;
+	background-image: linear-gradient(90deg, yellow, red, purple);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 .underline {
 	display: flex;
@@ -64,4 +68,12 @@ body {
 	width: 200px;
 	height: 50px;
 	border-radius: 25px;
+}
+.foot {
+	text-align: center;
+	padding: 0 80px;
+}
+.foot a {
+	text-decoration: none;
+	color: red;
 }

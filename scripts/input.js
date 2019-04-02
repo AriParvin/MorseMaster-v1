@@ -50,35 +50,32 @@ let assignChar = str => {
 }
 Mousetrap.bind("o", function() {
 	console.log("dit")
-	//snare.play()
-	//addDit()
 	tempStr.push("o")
+	period.play()
 }) //Binds i to dit and pushes 0 to tempStr
 
 Mousetrap.bind("i", function() {
 	console.log("dah")
-	//hats.play()
-	//addDah()
 	tempStr.push("i")
+	dash.play()
 }) //Binds o to dah and pushes 1 to tempStr
 
 Mousetrap.bind("space", function() {
 	console.log("space")
-	//kick.play()
 	assignChar(tempStr.join(""))
 	document.getElementById("output").innerText = conStr.join("")
 	tempStr = []
+	wb1.play()
 }) //Binds space to nextChar
 
 Mousetrap.bind("s", function() {
 	conStr.push(" ")
-	/* textArr.push(conStr.join(""))
-	document.getElementById("output").innerText = textArr.join(" ")
-	conStr = [] */
+	snr.play()
 })
 //binds s to newWord (no empties)
 Mousetrap.bind("backspace", function() {
 	conStr.pop("")
+	bdr.play()
 })
 Mousetrap.bind("q", function() {
 	console.log("checking...")

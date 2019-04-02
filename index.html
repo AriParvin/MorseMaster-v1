@@ -14,25 +14,36 @@
 			<h1>MORSE MASTER</h1>
 		</div>
 		<div class="selection">
-			<button id="howto">How to play?</button>
+			<button id="howto" onclick="showDesc()">How to play?</button>
+			<div id="howtoDesc">
+				Curabitur turpis. Suspendisse enim turpis, dictum sed, iaculis a, condimentum nec, nisi. Sed cursus
+				turpis vitae tortor. Morbi nec metus. Donec orci lectus, aliquam ut, faucibus non, euismod id, nulla.
+				Sed mollis, eros et ultrices tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a orci. In
+				turpis. Quisque id odio. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Proin
+				sapien ipsum, porta a, auctor quis, euismod ut, mi. Vivamus euismod mauris. Vivamus consectetuer
+				hendrerit lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+				egestas. Morbi nec metus. Ut varius tincidunt libero.
+			</div>
 			<button id="freeplay">Free Play</button>
 			<button id="morsemouse">Morse Mouse</button>
 			<button id="morsemaster">Morse Master</button>
 		</div>
+
+		<ul class="foot">
+			<p>
+				a Morse-Code learning experience, with inspiration and some assets from this
+				<a href="https://experiments.withgoogle.com/collection/morse">Chrome Experiment</a>
+			</p>
+		</ul>
 		<div id="inputField">
 			<div id="output"></div>
 		</div>
 		<script src="./scripts/mousetrap/mousetrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
-		<script src="./scripts/ref.js"></script>
+		<script src="./scripts/morsemouse.js"></script>
 		<script src="./scripts/input.js"></script>
 		<script src="./scripts/functions.js"></script>
 		<script src="./scripts/index.js"></script>
-		<audio id="hats" src="./assets/samples/Hihat 22 copy.wav"></audio>
-		<audio id="kick" src="./assets/samples/Kick 17.wav"></audio>
-		<audio id="snare" src="./assets/samples/Snare 10 copy.wav"></audio>
-		<audio id="wb1" src="./assets/samples/Woodblock 1 copy.wav"></audio>
-		<audio id="wb2" src="./assets/samples/Woodblock 3 copy.wav"></audio>
 	</body>
 </html>
