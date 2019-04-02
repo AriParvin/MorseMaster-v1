@@ -51,13 +51,13 @@ let assignChar = str => {
 Mousetrap.bind("o", function() {
 	console.log("dit")
 	tempStr.push("o")
-	period.play()
+	wb1.play()
 }) //Binds i to dit and pushes 0 to tempStr
 
 Mousetrap.bind("i", function() {
 	console.log("dah")
 	tempStr.push("i")
-	dash.play()
+	wb2.play()
 }) //Binds o to dah and pushes 1 to tempStr
 
 Mousetrap.bind("space", function() {
@@ -65,12 +65,12 @@ Mousetrap.bind("space", function() {
 	assignChar(tempStr.join(""))
 	document.getElementById("output").innerText = conStr.join("")
 	tempStr = []
-	wb1.play()
+	snr.play()
 }) //Binds space to nextChar
 
 Mousetrap.bind("s", function() {
 	conStr.push(" ")
-	snr.play()
+	hats.play()
 })
 //binds s to newWord (no empties)
 Mousetrap.bind("backspace", function() {
