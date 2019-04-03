@@ -92,8 +92,8 @@ body {
 	margin: 0;
 }
 div #desc-space {
-	padding-top: 0px;
-	font-size: 2em;
+	padding-top: 12px;
+	font-size: 1em;
 }
 .nav {
 	display: flex;
@@ -223,27 +223,25 @@ div #desc-space {
 	border-style: solid;
 	border-radius: 25px;
 }
-.textField {
+.textFree {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
 	align-self: center;
 	justify-content: center;
-	height: 40vh;
-	width: 80vw;
-	background-color: white;
+	height: 300px;
+	width: 800px;
 	border-style: solid;
 	border-radius: 25px;
 }
-#outputField {
+#outputFree {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
 	align-self: center;
+	padding-top: 25px;
 	justify-content: center;
-	height: 40vh;
-	width: 80vw;
-	background-color: white;
-	border-style: solid;
+	height: 100px;
+	width: 700px;
 	border-radius: 25px;
 }

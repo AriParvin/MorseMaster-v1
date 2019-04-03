@@ -56,7 +56,7 @@ Mousetrap.bind("o", function() {
 		console.log("line 56")
 		addDit(".promptInputField")
 	} else if (gameTypes.freePlay) {
-		addDit("#outputField")
+		addDit("#outputFree")
 	} else if (gameTypes.morseMouse) {
 		addDit("#outputFieldMouse")
 	}
@@ -70,7 +70,7 @@ Mousetrap.bind("i", function() {
 		console.log("line 56")
 		addDah(".promptInputField")
 	} else if (gameTypes.freePlay) {
-		addDah("#outputField")
+		addDah("#outputFree")
 	} else if (gameTypes.morseMouse) {
 		addDah("#outputFieldMouse")
 	}
@@ -82,12 +82,28 @@ Mousetrap.bind("space", function() {
 	if (gameTypes.morseMasterInstructions) {
 		gameTypes.morseMasterInstructions = false
 		nextMasterString()
-	}
-
-	if (gameTypes.morseMouse) {
+	} else if (gameTypes.morseMouse) {
 		outputFieldMouse.remove()
 		createFieldMouse()
+	} else if (gameTypes.freePlay) {
+		var conStrTxt = conStr[conStr.length - 1]
+		console.log(conStrTxt)
+		//document.getElementsByClassName("textFree").innerText = conStrTxt
+		// document.getElementById("inputField").style.color = "black"
+		var array = document.getElementsByClassName("textFree")
+		var textFree = array[0]
+		var newP = document.createElement("p")
+		newP.innerText = conStrTxt
+		textFree.appendChild(newP)
+
+		tempStr = []
+		outputFree.remove()
+		createOutputFree()
 	}
+	// var textFree = document.getElementsByClassName(".textFree")
+	// var addStrTxt = document.createElement("div")
+	// addStrTxt.id = "conStrTxt"
+	// conStrTxt.appendChild(addStrTxt)
 
 	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */
 	/* Checks if correct character */
@@ -221,12 +237,15 @@ const createTextField = () => {
 	containerDiv.remove()
 
 	var textFieldVar = document.createElement("div")
-	textFieldVar.classList.add("textField")
+	textFieldVar.classList.add("textFree")
 	document.body.appendChild(textFieldVar)
 
-	var outputFieldVar = document.createElement("div")
-	outputFieldVar.id = "outputField"
-	document.body.appendChild(outputFieldVar)
+	createOutputFree()
+}
+const createOutputFree = () => {
+	var outputFreeVar = document.createElement("div")
+	outputFreeVar.id = "outputFree"
+	document.body.appendChild(outputFreeVar)
 }
 
 //Prompt Field Morse Master
@@ -247,6 +266,7 @@ const createPromptField = () => {
 	document.body.appendChild(promptInputVar)
 }
 //Maybe Match rdmChars with Input
+
 const getKeyByValue = (object, value) => {
 	console.log(Object.keys(object).find(key => object[key] === value))
 	return Object.keys(object).find(key => object[key] === value)
