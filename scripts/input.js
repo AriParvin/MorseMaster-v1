@@ -52,17 +52,33 @@ Mousetrap.bind("o", function() {
 	console.log("dit")
 	tempStr.push("o")
 	period.play()
+	if (gameTypes.morseMaster){
+		console.log("line 56")
+		addDit(".promptInputField")
+	}
 })
 
 Mousetrap.bind("i", function() {
 	console.log("dah")
 	tempStr.push("i")
 	dash.play()
+	if (gameTypes.morseMaster){
+		console.log("line 56")
+		addDah(".promptInputField")
+	}
 })
 
 Mousetrap.bind("space", function() {
 	console.log("space")
 	assignChar(tempStr.join(""))
+	if (gameTypes.morseMasterInstructions){
+		gameTypes.morseMasterInstructions = false
+		nextMasterString()
+	}
+
+	if (gameTypes.morseMaster){
+	/* WRITE STUFF HERE */	
+	}
 
 	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */
 	/* Checks if correct character */

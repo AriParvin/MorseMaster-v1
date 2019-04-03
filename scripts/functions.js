@@ -1,11 +1,19 @@
 console.log("ready3")
 
+const masterStrings = [
+	"This is sentence1",
+	"This is the second sentence",
+	"This would be the third sentence"
+]
+
 let randomCharacter = ""
 let morseCode = ""
+
 const gameTypes = {
 	freePlay: false,
 	morseMouse: false,
-	morseMaster: false
+	morseMaster: false,
+	morseMasterInstructions: false
 }
 /* const menuReturn  {
 	document.getElementByTagName("body")
@@ -111,15 +119,20 @@ const startMorseMouse = () => {
 	gameTypes.morseMouse = true
 	createGameBoard()
 	randomizeChar()
-	document.getElementById("inputField").innerText = randomCharacter
-
-	
-
-	
+	document.getElementById("inputField").innerText = randomCharacter	
 }
+
+nextMasterString = () => {
+	var x  = document.querySelector(".promptField")
+	x.innerText= masterStrings[points]
+}
+
+
 const startMorseMaster = () => {
 	gameTypes.morseMaster = true
+	gameTypes.morseMasterInstructions = true
 	createPromptField()
+	masterInstructions()
 }
 function showDesc() {
 	let x = document.getElementById("howtoDesc")
@@ -130,6 +143,15 @@ function showDesc() {
 		x.style.opacity = 100
 	}
 }
+
+const masterInstructions = () => {
+	var x  = document.querySelector(".promptField")
+	x.innerText= "Use your morse knowledge to write the sentences. Press space to start.."
+
+
+
+}
+
 var period = new Audio("../assets/samples/period.wav")
 period.load()
 var dash = new Audio("../assets/samples/dash.wav")
@@ -145,20 +167,21 @@ bdr.load()
 var hats = new Audio("../assets/samples/Hihat22copy.wav")
 hats.load()
 
-const addDit = function() {
+const addDit = function(x) {
 	var dit = document.createElement("div")
 	dit.setAttribute("id", "dit")
-	document.getElementById("inputField").appendChild(dit)
+	document.querySelector(x).appendChild(dit)
 } //adds dit to DOM
 
-const addDah = function() {
+const addDah = function(x) {
 	var dah = document.createElement("div")
 	dah.setAttribute("id", "dah")
-	document.getElementById("inputField").appendChild(dah)
+	document.querySelector(x).appendChild(dah)
 } //adds dah to DOM
 
+/* probably not need this */
 const addSpace = function() {
 	var space = document.createElement("div")
 	space.setAttribute("id", "space")
-	document.getElementById("inputField").appendChild(space)
+	document.querySelector("inputField").appendChild(space)
 } //adds space to DOM
