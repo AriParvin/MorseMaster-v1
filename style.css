@@ -217,14 +217,24 @@ div #desc-space {
 	border-style: solid;
 	border-radius: 25px;
 }
+#outputField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	height: 40vh;
+	width: 80vw;
+	background-color: white;
+	border-style: solid;
+	border-radius: 25px;
+}
 
-#hintField{
+#hintField {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
 	align-self: center;
 	justify-content: center;
 	background-color: white;
-	
-	
 }

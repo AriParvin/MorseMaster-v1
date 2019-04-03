@@ -1,10 +1,4 @@
-console.log("ready3")
-
-const masterStrings = [
-	"This is sentence1",
-	"This is the second sentence",
-	"This would be the third sentence"
-]
+const masterStrings = ["This is sentence1", "This is the second sentence", "This would be the third sentence"]
 
 let randomCharacter = ""
 let morseCode = ""
@@ -15,9 +9,13 @@ const gameTypes = {
 	morseMaster: false,
 	morseMasterInstructions: false
 }
-/* const menuReturn  {
-	document.getElementByTagName("body")
-} */
+// const menuReturn = () => {
+// 	menuReturnVar = document.getElementByTagName("body").addEventListener("click", function() {
+// 		document.classList.add(".container")
+// 	})
+// }
+
+//Random Char Generator for Morse Mouse
 const randomizeChar = () => {
 	randomCharacter = randomChars(charLib)
 	morseCode = getKeyByValue(charLib, randomCharacter)
@@ -28,6 +26,7 @@ const randomChars = obj => {
 	return obj[chars[(chars.length * Math.random()) << 0]]
 }
 
+//Draws Gameboard for Morse Mouse
 const createGameBoard = () => {
 	/* Removes container */
 	var containerDiv = document.querySelector(".container")
@@ -43,8 +42,8 @@ const createGameBoard = () => {
 
 	createHintField()
 }
-
-const createHintField = () =>{
+//Hintfield Morse Mouse
+const createHintField = () => {
 	console.log("hintfield created")
 	var gameBoardVar = document.querySelector(".gameBoard")
 	var hintField = document.createElement("div")
@@ -57,25 +56,25 @@ const createHintField = () =>{
 	var dahVar = document.createElement("div")
 	dahVar.id = "dah"
 
+	//HintField Timeout & Match Listener
+	//Problem: Timeout does not reset = hints clone multiple times
 	setTimeout(() => {
 		console.log(morseCode)
-
-		
+		wb2.play()
 		for (let i of morseCode) {
 			if (i == "i") {
-				dash.play()
 				console.log("i")
 				document.querySelector("#hintField").appendChild(dahVar.cloneNode(true))
 			}
 			if (i == "o") {
-				period.play()
 				console.log("o")
 				document.querySelector("#hintField").appendChild(ditVar.cloneNode(true))
 			}
 		}
-	}, 2000)
+	}, 10000)
 }
 
+//Text Field Free Play
 const createTextField = () => {
 	/* Removes container */
 	var containerDiv = document.querySelector(".container")
@@ -87,8 +86,10 @@ const createTextField = () => {
 
 	var outputFieldVar = document.createElement("div")
 	outputFieldVar.id = "outputField"
-	textFieldVar.appendChild(outputFieldVar)
+	document.body.appendChild(outputFieldVar)
 }
+
+//Prompt Field Morse Master
 const createPromptField = () => {
 	var containerDiv = document.querySelector(".container")
 	containerDiv.remove()
@@ -105,36 +106,40 @@ const createPromptField = () => {
 	promptInputVar.classList.add("promptInputField")
 	document.body.appendChild(promptInputVar)
 }
-
+//Maybe Match rdmChars with Input
 const getKeyByValue = (object, value) => {
 	console.log(Object.keys(object).find(key => object[key] === value))
 	return Object.keys(object).find(key => object[key] === value)
 }
+
+//Free Play INIT
 const startFreePlay = () => {
 	gameTypes.freePlay = true
 	createTextField()
 }
 
+//Morse Mouse INIT
 const startMorseMouse = () => {
 	gameTypes.morseMouse = true
 	createGameBoard()
 	randomizeChar()
-	document.getElementById("inputField").innerText = randomCharacter	
+	document.getElementById("inputField").innerText = randomCharacter
 }
 
+//??
 nextMasterString = () => {
-	var x  = document.querySelector(".promptField")
-	x.innerText= masterStrings[points]
-
+	var x = document.querySelector(".promptField")
+	x.innerText = masterStrings[points]
 }
-
-
+//Morse Master INIT
 const startMorseMaster = () => {
 	gameTypes.morseMaster = true
 	gameTypes.morseMasterInstructions = true
 	createPromptField()
 	masterInstructions()
 }
+
+//Show Key Bindings
 function showDesc() {
 	let x = document.getElementById("howtoDesc")
 	if (x.style.opacity === "100") {
@@ -145,14 +150,13 @@ function showDesc() {
 	}
 }
 
+//Prompted text in Morse Master
 const masterInstructions = () => {
-	var x  = document.querySelector(".promptField")
-	x.innerText= "Use your morse knowledge to write the sentences. Press space to start.."
-
-
-
+	var x = document.querySelector(".promptField")
+	x.innerText = "Use your morse knowledge to write the sentences. Press space to start.."
 }
 
+//Audio Files
 var period = new Audio("../assets/samples/period.wav")
 period.load()
 var dash = new Audio("../assets/samples/dash.wav")
@@ -168,21 +172,22 @@ bdr.load()
 var hats = new Audio("../assets/samples/Hihat22copy.wav")
 hats.load()
 
+//adds period to DOM
 const addDit = function(x) {
 	var dit = document.createElement("div")
 	dit.setAttribute("id", "dit")
 	document.querySelector(x).appendChild(dit)
-} //adds dit to DOM
-
+}
+//adds dash to DOM
 const addDah = function(x) {
 	var dah = document.createElement("div")
 	dah.setAttribute("id", "dah")
 	document.querySelector(x).appendChild(dah)
-} //adds dah to DOM
+}
 
 /* probably not need this */
-const addSpace = function() {
-	var space = document.createElement("div")
-	space.setAttribute("id", "space")
-	document.querySelector("inputField").appendChild(space)
-} //adds space to DOM
+// const addSpace = function() {
+// 	var space = document.createElement("div")
+// 	space.setAttribute("id", "space")
+// 	document.querySelector("inputField").appendChild(space)}
+//adds space to DOM

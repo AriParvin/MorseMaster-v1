@@ -1,8 +1,8 @@
-console.log("ready2")
 let points = 0
 let tempStr = []
 let conStr = []
 
+//Morse-Alphabet Dict
 const charLib = {
 	oi: "A",
 	iooo: "B",
@@ -52,9 +52,11 @@ Mousetrap.bind("o", function() {
 	console.log("dit")
 	tempStr.push("o")
 	period.play()
-	if (gameTypes.morseMaster){
+	if (gameTypes.morseMaster) {
 		console.log("line 56")
 		addDit(".promptInputField")
+	} else if (gameTypes.freePlay) {
+		addDit("#outputField")
 	}
 })
 
@@ -62,37 +64,43 @@ Mousetrap.bind("i", function() {
 	console.log("dah")
 	tempStr.push("i")
 	dash.play()
-	if (gameTypes.morseMaster){
+	if (gameTypes.morseMaster) {
 		console.log("line 56")
 		addDah(".promptInputField")
+	} else if (gameTypes.freePlay) {
+		addDah("#outputField")
 	}
 })
 
 Mousetrap.bind("space", function() {
 	console.log("space")
 	assignChar(tempStr.join(""))
-	if (gameTypes.morseMasterInstructions){
+	if (gameTypes.morseMasterInstructions) {
 		gameTypes.morseMasterInstructions = false
 		nextMasterString()
 	}
 
-	if (gameTypes.morseMaster){
-	/* WRITE STUFF HERE */	
+	if (gameTypes.morseMaster) {
+		/* WRITE STUFF HERE */
 	}
 
 	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */
 	/* Checks if correct character */
-	if (conStr[conStr.length - 1] == randomCharacter) {
-		points++
-		randomizeChar()
-		document.getElementById("inputField").innerText = randomCharacter
-		var hintField = document.querySelector("#hintField")
-		hintField.remove()
-		createHintField()
-
+	if (gameTypes.morseMouse) {
+		if (conStr[conStr.length - 1] == randomCharacter) {
+			points++
+			randomizeChar()
+			document.getElementById("inputField").innerText = randomCharacter
+			document.getElementById("inputField").style.color = "black"
+			var hintField = document.querySelector("#hintField")
+			hintField.remove()
+			createHintField()
+		} else {
+			document.getElementById("inputField").style.color = "red"
+		}
+		tempStr = []
+		wb1.play()
 	}
-	tempStr = []
-	wb1.play()
 })
 
 Mousetrap.bind("s", function() {
