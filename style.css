@@ -100,6 +100,7 @@ div #desc-space {
 	flex-direction: row;
 	justify-content: center;
 	width: 100vw;
+	height: 250px;
 }
 .nav li {
 	display: flex;
@@ -109,18 +110,18 @@ div #desc-space {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	height: 300px;
+	height: 250px;
 	width: 33.3vw;
 	justify-content: space-around;
 }
-.something {
+.nothing {
 	width: 33.3vw;
 }
 .selection {
 	-webkit-animation: fadein 0s;
 	display: flex;
 	flex-flow: column;
-	height: 300px;
+	height: 250px;
 	width: 33.3vw;
 	justify-content: space-around;
 }
@@ -179,4 +180,40 @@ div #desc-space {
 }
 .gameBoard #dah #dit {
 	align-self: center;
+}
+.promptField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	height: 40vh;
+	width: 80vw;
+	background-color: white;
+	border-style: solid;
+	border-radius: 25px;
+}
+.promptInputField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	height: 40vh;
+	width: 80vw;
+	background-color: white;
+	border-style: solid;
+	border-radius: 25px;
+}
+.textField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	height: 40vh;
+	width: 80vw;
+	background-color: white;
+	border-style: solid;
+	border-radius: 25px;
 }

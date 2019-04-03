@@ -7,7 +7,9 @@ const gameTypes = {
 	morseMouse: false,
 	morseMaster: false
 }
-
+const menuReturn{
+	document.getElementByTagName("body")
+}
 const randomizeChar = () => {
 	randomCharacter = randomChars(charLib)
 	morseCode = getKeyByValue(charLib, randomCharacter)
@@ -31,10 +33,43 @@ const createGameBoard = () => {
 	inputFieldVar.id = "inputField"
 	gameBoardVar.appendChild(inputFieldVar)
 }
+const createTextField = () => {
+	/* Removes container */
+	var containerDiv = document.querySelector(".container")
+	containerDiv.remove()
+
+	var textFieldVar = document.createElement("div")
+	textFieldVar.classList.add("textField")
+	document.body.appendChild(textFieldVar)
+
+	var outputFieldVar = document.createElement("div")
+	outputFieldVar.id = "outputField"
+	textFieldVar.appendChild(outputFieldVar)
+}
+const createPromptField = () => {
+	var containerDiv = document.querySelector(".container")
+	containerDiv.remove()
+
+	var promptFieldVar = document.createElement("div")
+	promptFieldVar.classList.add("promptField")
+	document.body.appendChild(promptFieldVar)
+
+	var promptVar = document.createElement("div")
+	promptVar.id = "prompt"
+	promptFieldVar.appendChild(promptVar)
+
+	var promptInputVar = document.createElement("div")
+	promptInputVar.classList.add("promptInputField")
+	document.body.appendChild(promptInputVar)
+}
 
 const getKeyByValue = (object, value) => {
 	console.log(Object.keys(object).find(key => object[key] === value))
 	return Object.keys(object).find(key => object[key] === value)
+}
+const startFreePlay = () => {
+	gameTypes.freePlay = true
+	createTextField()
 }
 
 const startMorseMouse = () => {
@@ -53,15 +88,21 @@ const startMorseMouse = () => {
 		console.log(morseCode)
 		for (let i of morseCode) {
 			if (i == "i") {
+				dash.play()
 				console.log("i")
 				document.querySelector(".gameBoard").appendChild(dahVar.cloneNode(true))
 			}
 			if (i == "o") {
+				period.play()
 				console.log("o")
 				document.querySelector(".gameBoard").appendChild(ditVar.cloneNode(true))
 			}
 		}
 	}, 5000)
+}
+const startMorseMaster = () => {
+	gameTypes.morseMaster = true
+	createPromptField()
 }
 function showDesc() {
 	let x = document.getElementById("howtoDesc")
@@ -72,19 +113,19 @@ function showDesc() {
 		x.style.opacity = 100
 	}
 }
-var period = new Audio("../assets/samples/period.mp3")
+var period = new Audio("../assets/samples/period.wav")
 period.load()
-var dash = new Audio("../assets/samples/dash.mp3")
+var dash = new Audio("../assets/samples/dash.wav")
 dash.load()
-var wb1 = new Audio("../assets/samples/Woodblock 1 copy.wav")
+var wb1 = new Audio("../assets/samples/Woodblock1copy.wav")
 wb1.load()
-var wb2 = new Audio("../assets/samples/Woodblock 3 copy.wav")
+var wb2 = new Audio("../assets/samples/Woodblock3copy.wav")
 wb2.load()
-var snr = new Audio("../assets/samples/Snare 10 copy.wav")
+var snr = new Audio("../assets/samples/Snare10copy.wav")
 snr.load()
-var bdr = new Audio("../assets/samples/Kick 17.wav")
+var bdr = new Audio("../assets/samples/Kick17.wav")
 bdr.load()
-var hats = new Audio("../assets/samples/Hihat 22 copy.wav")
+var hats = new Audio("../assets/samples/Hihat22copy.wav")
 hats.load()
 
 const addDit = function() {
