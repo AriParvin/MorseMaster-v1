@@ -7,9 +7,9 @@ const gameTypes = {
 	morseMouse: false,
 	morseMaster: false
 }
-const menuReturn{
+/* const menuReturn  {
 	document.getElementByTagName("body")
-}
+} */
 const randomizeChar = () => {
 	randomCharacter = randomChars(charLib)
 	morseCode = getKeyByValue(charLib, randomCharacter)
@@ -32,7 +32,42 @@ const createGameBoard = () => {
 	var inputFieldVar = document.createElement("div")
 	inputFieldVar.id = "inputField"
 	gameBoardVar.appendChild(inputFieldVar)
+
+	createHintField()
 }
+
+const createHintField = () =>{
+	console.log("hintfield created")
+	var gameBoardVar = document.querySelector(".gameBoard")
+	var hintField = document.createElement("div")
+	hintField.id = "hintField"
+	gameBoardVar.appendChild(hintField)
+
+	var ditVar = document.createElement("div")
+	ditVar.id = "dit"
+	/* ditVar.style.height = "200px" */
+	var dahVar = document.createElement("div")
+	dahVar.id = "dah"
+
+	setTimeout(() => {
+		console.log(morseCode)
+		
+		for (let i of morseCode) {
+			if (i == "i") {
+				dash.play()
+				console.log("i")
+				document.querySelector("#hintField").appendChild(dahVar.cloneNode(true))
+			}
+			if (i == "o") {
+				period.play()
+				console.log("o")
+				document.querySelector("#hintField").appendChild(ditVar.cloneNode(true))
+			}
+		}
+	}, 2000)
+
+}
+
 const createTextField = () => {
 	/* Removes container */
 	var containerDiv = document.querySelector(".container")
@@ -78,27 +113,9 @@ const startMorseMouse = () => {
 	randomizeChar()
 	document.getElementById("inputField").innerText = randomCharacter
 
-	var ditVar = document.createElement("div")
-	ditVar.id = "dit"
-	/* ditVar.style.height = "200px" */
-	var dahVar = document.createElement("div")
-	dahVar.id = "dah"
+	
 
-	setTimeout(() => {
-		console.log(morseCode)
-		for (let i of morseCode) {
-			if (i == "i") {
-				dash.play()
-				console.log("i")
-				document.querySelector(".gameBoard").appendChild(dahVar.cloneNode(true))
-			}
-			if (i == "o") {
-				period.play()
-				console.log("o")
-				document.querySelector(".gameBoard").appendChild(ditVar.cloneNode(true))
-			}
-		}
-	}, 5000)
+	
 }
 const startMorseMaster = () => {
 	gameTypes.morseMaster = true
