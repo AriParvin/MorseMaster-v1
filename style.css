@@ -217,3 +217,14 @@ div #desc-space {
 	border-style: solid;
 	border-radius: 25px;
 }
+
+#hintField{
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	background-color: white;
+	
+	
+}

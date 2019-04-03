@@ -36,7 +36,11 @@ const createGameBoard = () => {
 	createHintField()
 }
 
+<<<<<<< HEAD
 const createHintField = () => {
+=======
+const createHintField = () =>{
+>>>>>>> 64c8d3db84e69f0bed101664ec49fd860d7e78c3
 	console.log("hintfield created")
 	var gameBoardVar = document.querySelector(".gameBoard")
 	var hintField = document.createElement("div")
@@ -51,7 +55,11 @@ const createHintField = () => {
 
 	setTimeout(() => {
 		console.log(morseCode)
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 64c8d3db84e69f0bed101664ec49fd860d7e78c3
 		for (let i of morseCode) {
 			if (i == "i") {
 				dash.play()
@@ -65,6 +73,10 @@ const createHintField = () => {
 			}
 		}
 	}, 2000)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 64c8d3db84e69f0bed101664ec49fd860d7e78c3
 }
 
 const createTextField = () => {
@@ -111,6 +123,13 @@ const startMorseMouse = () => {
 	createGameBoard()
 	randomizeChar()
 	document.getElementById("inputField").innerText = randomCharacter
+<<<<<<< HEAD
+=======
+
+	
+
+	
+>>>>>>> 64c8d3db84e69f0bed101664ec49fd860d7e78c3
 }
 const startMorseMaster = () => {
 	gameTypes.morseMaster = true
