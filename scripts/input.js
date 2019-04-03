@@ -65,11 +65,15 @@ Mousetrap.bind("space", function() {
 	assignChar(tempStr.join(""))
 
 	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */
-
+	/* Checks if correct character */
 	if (conStr[conStr.length - 1] == randomCharacter) {
 		points++
 		randomizeChar()
 		document.getElementById("inputField").innerText = randomCharacter
+		var hintField = document.querySelector("#hintField")
+		hintField.remove()
+		createHintField()
+
 	}
 	tempStr = []
 	wb1.play()
