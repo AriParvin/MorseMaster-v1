@@ -59,6 +59,7 @@ const createHintField = () =>{
 
 	setTimeout(() => {
 		console.log(morseCode)
+
 		
 		for (let i of morseCode) {
 			if (i == "i") {
@@ -73,7 +74,6 @@ const createHintField = () =>{
 			}
 		}
 	}, 2000)
-
 }
 
 const createTextField = () => {
@@ -125,6 +125,7 @@ const startMorseMouse = () => {
 nextMasterString = () => {
 	var x  = document.querySelector(".promptField")
 	x.innerText= masterStrings[points]
+
 }
 
 
