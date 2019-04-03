@@ -87,9 +87,13 @@ Mousetrap.bind("space", function() {
 	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */
 	/* Checks if correct character */
 	if (gameTypes.morseMouse) {
+		// clear timeouts
 		if (conStr[conStr.length - 1] == randomCharacter) {
 			points++
 			randomizeChar()
+			timeoutIds.forEach(function(el) {
+				window.clearTimeout(el)
+			})
 			document.getElementById("inputField").innerText = randomCharacter
 			document.getElementById("inputField").style.color = "black"
 			var hintField = document.querySelector("#hintField")

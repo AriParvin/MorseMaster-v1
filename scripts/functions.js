@@ -1,5 +1,5 @@
 const masterStrings = ["This is sentence1", "This is the second sentence", "This would be the third sentence"]
-
+const timeoutIds = []
 let randomCharacter = ""
 let morseCode = ""
 
@@ -9,11 +9,11 @@ const gameTypes = {
 	morseMaster: false,
 	morseMasterInstructions: false
 }
-// const menuReturn = () => {
-// 	menuReturnVar = document.getElementByTagName("body").addEventListener("click", function() {
-// 		document.classList.add(".container")
-// 	})
-// }
+const menuReturn = () => {
+	menuReturnVar = document.getElementByTagName("body").addEventListener("click", function() {
+		window.location.href = "http://0.0.0.0:5500/index.html"
+	})
+}
 
 //Random Char Generator for Morse Mouse
 const randomizeChar = () => {
@@ -29,6 +29,7 @@ const randomChars = obj => {
 //Draws Gameboard for Morse Mouse
 const createGameBoard = () => {
 	/* Removes container */
+
 	var containerDiv = document.querySelector(".container")
 	containerDiv.remove()
 
@@ -58,20 +59,22 @@ const createHintField = () => {
 
 	//HintField Timeout & Match Listener
 	//Problem: Timeout does not reset = hints clone multiple times
-	setTimeout(() => {
-		console.log(morseCode)
-		wb2.play()
-		for (let i of morseCode) {
-			if (i == "i") {
-				console.log("i")
-				document.querySelector("#hintField").appendChild(dahVar.cloneNode(true))
+	timeoutIds.push(
+		setTimeout(() => {
+			console.log(morseCode)
+			wb2.play()
+			for (let i of morseCode) {
+				if (i == "i") {
+					console.log("i")
+					document.querySelector("#hintField").appendChild(dahVar.cloneNode(true))
+				}
+				if (i == "o") {
+					console.log("o")
+					document.querySelector("#hintField").appendChild(ditVar.cloneNode(true))
+				}
 			}
-			if (i == "o") {
-				console.log("o")
-				document.querySelector("#hintField").appendChild(ditVar.cloneNode(true))
-			}
-		}
-	}, 10000)
+		}, 10000)
+	)
 }
 
 //Text Field Free Play
