@@ -57,6 +57,8 @@ Mousetrap.bind("o", function() {
 		addDit(".promptInputField")
 	} else if (gameTypes.freePlay) {
 		addDit("#outputField")
+	} else if (gameTypes.morseMouse) {
+		addDit("#outputFieldMouse")
 	}
 })
 
@@ -69,6 +71,8 @@ Mousetrap.bind("i", function() {
 		addDah(".promptInputField")
 	} else if (gameTypes.freePlay) {
 		addDah("#outputField")
+	} else if (gameTypes.morseMouse) {
+		addDah("#outputFieldMouse")
 	}
 })
 
@@ -80,8 +84,9 @@ Mousetrap.bind("space", function() {
 		nextMasterString()
 	}
 
-	if (gameTypes.morseMaster) {
-		/* WRITE STUFF HERE */
+	if (gameTypes.morseMouse) {
+		outputFieldMouse.remove()
+		createFieldMouse()
 	}
 
 	/* document.getElementById("output").innerText = conStr.join("") COMMENT THIS ASAP */
@@ -165,8 +170,16 @@ const createGameBoard = () => {
 	inputFieldVar.id = "inputField"
 	gameBoardVar.appendChild(inputFieldVar)
 
+	createFieldMouse()
 	createHintField()
 }
+const createFieldMouse = () => {
+	var gameBoardVar = document.querySelector(".gameBoard")
+	var outputFieldMouse = document.createElement("div")
+	outputFieldMouse.id = "outputFieldMouse"
+	gameBoardVar.appendChild(outputFieldMouse)
+}
+
 //Hintfield Morse Mouse
 const createHintField = () => {
 	console.log("hintfield created")
@@ -272,7 +285,6 @@ function showDesc() {
 	if (x.style.opacity === "100") {
 		x.style.opacity = 0
 	} else {
-		console.log("hello")
 		x.style.opacity = 100
 	}
 }
