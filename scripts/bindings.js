@@ -52,6 +52,7 @@ Mousetrap.bind("i", function() {
 
 Mousetrap.bind("space", function() {
 	console.log("space")
+	wb1.play()
 	assignChar(tempStr.join(""))
 	if (gameTypes.morseMasterInstructions) {
 		gameTypes.morseMasterInstructions = false

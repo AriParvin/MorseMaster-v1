@@ -4,6 +4,7 @@ const startMorseMaster = () => {
 	gameTypes.morseMasterInstructions = true
 	createPromptField()
 	masterInstructions()
+	menuReturn()
 }
 
 //Prompted text in Morse Master

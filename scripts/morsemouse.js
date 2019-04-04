@@ -3,6 +3,7 @@ const startMorseMouse = () => {
 	gameTypes.morseMouse = true
 	createGameBoard()
 	randomizeChar()
+	menuReturn()
 	document.getElementById("inputField").innerText = randomCharacter
 }
 

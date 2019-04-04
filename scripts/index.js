@@ -2,7 +2,7 @@ let points = 0
 let tempStr = []
 let conStr = []
 const conStrTxt = conStr[conStr.length - 1]
-//document.getElementsByTagName("body").addEventListener("click", reload())
+
 //Morse-Alphabet Dict
 const charLib = {
 	oi: "A",
@@ -52,6 +52,7 @@ let randomCharacter = ""
 let morseCode = ""
 
 const gameTypes = {
+	menu: true,
 	freePlay: false,
 	morseMouse: false,
 	morseMaster: false,

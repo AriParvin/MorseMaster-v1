@@ -2,9 +2,13 @@ let assignChar = str => {
 	conStr.push(charLib[str])
 }
 const menuReturn = () => {
-	menuReturnVar = document.getElementByTagName("body").addEventListener("click", function() {
-		window.location.reload()
-	})
+	var element = document.createElement("button")
+	element.setAttribute("id", "pageReload")
+	element.onclick = pageReload
+	function pageReload() {
+		location.reload()
+	}
+	document.querySelector("body").appendChild(element)
 }
 //Maybe Match rdmChars with Input
 

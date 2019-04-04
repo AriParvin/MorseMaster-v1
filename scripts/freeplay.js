@@ -2,6 +2,7 @@
 const startFreePlay = () => {
 	gameTypes.freePlay = true
 	createTextField()
+	menuReturn()
 }
 
 //Text Field Free Play
