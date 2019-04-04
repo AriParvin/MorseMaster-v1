@@ -1,7 +1,8 @@
 let points = 0
 let tempStr = []
 let conStr = []
-
+const conStrTxt = conStr[conStr.length - 1]
+//document.getElementsByTagName("body").addEventListener("click", reload())
 //Morse-Alphabet Dict
 const charLib = {
 	oi: "A",
@@ -54,7 +55,7 @@ Mousetrap.bind("o", function() {
 	period.play()
 	if (gameTypes.morseMaster) {
 		console.log("line 56")
-		addDit(".promptInputField")
+		addDit(".promptOutputField")
 	} else if (gameTypes.freePlay) {
 		addDit("#outputFree")
 	} else if (gameTypes.morseMouse) {
@@ -68,7 +69,7 @@ Mousetrap.bind("i", function() {
 	dash.play()
 	if (gameTypes.morseMaster) {
 		console.log("line 56")
-		addDah(".promptInputField")
+		addDah(".promptOutputField")
 	} else if (gameTypes.freePlay) {
 		addDah("#outputFree")
 	} else if (gameTypes.morseMouse) {
@@ -82,20 +83,24 @@ Mousetrap.bind("space", function() {
 	if (gameTypes.morseMasterInstructions) {
 		gameTypes.morseMasterInstructions = false
 		nextMasterString()
+	} else if (gameTypes.morseMaster) {
+		promptOutputField.remove()
+		createPromptOutput()
 	} else if (gameTypes.morseMouse) {
 		outputFieldMouse.remove()
 		createFieldMouse()
 	} else if (gameTypes.freePlay) {
 		var conStrTxt = conStr[conStr.length - 1]
-		console.log(conStrTxt)
-		//document.getElementsByClassName("textFree").innerText = conStrTxt
-		// document.getElementById("inputField").style.color = "black"
-		var array = document.getElementsByClassName("textFree")
-		var textFree = array[0]
-		var newP = document.createElement("p")
-		newP.innerText = conStrTxt
-		textFree.appendChild(newP)
-
+		if (conStrTxt !== undefined) {
+			console.log(conStrTxt)
+			//document.getElementsByClassName("textFree").innerText = conStrTxt
+			// document.getElementById("inputField").style.color = "black"
+			var array = document.getElementsByClassName("textFree")
+			var textFree = array[0]
+			var newP = document.createElement("p")
+			newP.innerText = conStrTxt
+			textFree.appendChild(newP)
+		}
 		tempStr = []
 		outputFree.remove()
 		createOutputFree()
@@ -131,11 +136,21 @@ Mousetrap.bind("space", function() {
 Mousetrap.bind("s", function() {
 	conStr.push(" ")
 	hats.play()
+	if (gameTypes.freePlay) {
+		var array = document.getElementsByClassName("textFree")
+		var textFree = array[0]
+		var newSpace = document.createElement("p")
+		newSpace.innerText = " "
+		textFree.appendChild(newSpace)
+	}
 })
 
 Mousetrap.bind("backspace", function() {
 	conStr.pop("")
 	bdr.play()
+	if (gameTypes.freePlay) {
+		removeLast()
+	}
 })
 Mousetrap.bind("q", function() {
 	console.log("checking...")
@@ -156,7 +171,7 @@ const gameTypes = {
 }
 const menuReturn = () => {
 	menuReturnVar = document.getElementByTagName("body").addEventListener("click", function() {
-		window.location.href = "http://0.0.0.0:5500/index.html"
+		window.location.reload()
 	})
 }
 
@@ -226,7 +241,7 @@ const createHintField = () => {
 					document.querySelector("#hintField").appendChild(ditVar.cloneNode(true))
 				}
 			}
-		}, 10000)
+		}, 8000)
 	)
 }
 
@@ -247,6 +262,10 @@ const createOutputFree = () => {
 	outputFreeVar.id = "outputFree"
 	document.body.appendChild(outputFreeVar)
 }
+const removeLast = () => {
+	var select = document.getElementsByClassName("textFree")
+	select.removeChild(select.lastChild)
+}
 
 //Prompt Field Morse Master
 const createPromptField = () => {
@@ -261,9 +280,12 @@ const createPromptField = () => {
 	promptVar.id = "prompt"
 	promptFieldVar.appendChild(promptVar)
 
-	var promptInputVar = document.createElement("div")
-	promptInputVar.classList.add("promptInputField")
-	document.body.appendChild(promptInputVar)
+	createPromptOutput()
+}
+const createPromptOutput = () => {
+	var promptOutputVar = document.createElement("div")
+	promptOutputVar.classList.add("promptOutputField")
+	document.body.appendChild(promptOutputVar)
 }
 //Maybe Match rdmChars with Input
 

@@ -203,36 +203,43 @@ div #desc-space {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
+	font-size: 1.5em;
 	align-self: center;
 	justify-content: center;
-	height: 40vh;
-	width: 80vw;
-	background-color: white;
+	padding: 70px 0 0 0;
+	margin-bottom: 50px;
+	width: 1000px;
+	height: 200px;
 	border-style: solid;
 	border-radius: 25px;
 }
-.promptInputField {
+.promptOutputField {
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
 	align-self: center;
 	justify-content: center;
-	height: 40vh;
-	width: 80vw;
-	background-color: white;
-	border-style: solid;
-	border-radius: 25px;
+	width: 600px;
 }
 .textFree {
+	padding: 20px;
 	display: flex;
 	flex-wrap: wrap;
-	text-align: center;
+	margin: 0px;
 	align-self: center;
-	justify-content: center;
 	height: 300px;
 	width: 800px;
 	border-style: solid;
 	border-radius: 25px;
+}
+.textFree p {
+	line-height: 90%;
+	height: 0;
+	padding: 0px;
+	display: flex;
+	font-size: 2em;
+	margin: 0;
+	justify-content: center;
 }
 #outputFree {
 	display: flex;
