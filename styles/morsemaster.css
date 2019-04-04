@@ -1,0 +1,22 @@
+.promptField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	font-size: 1.5em;
+	align-self: center;
+	justify-content: center;
+	padding: 70px 0 0 0;
+	margin-bottom: 50px;
+	width: 1000px;
+	height: 200px;
+	border-style: solid;
+	border-radius: 25px;
+}
+.promptOutputField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	width: 600px;
+}

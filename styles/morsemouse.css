@@ -1,0 +1,40 @@
+.gameBoard {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	height: 400px;
+	width: 700px;
+	background-color: white;
+	border-style: solid;
+	border-radius: 25px;
+}
+.gameBoard #inputField {
+	font-family: "Varela Round", sans-serif;
+	margin: 0;
+	padding-top: 50px;
+	font-size: 10em;
+	width: 700px;
+}
+#hintField {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	justify-content: center;
+	background-color: white;
+	width: 700px;
+}
+
+.gameBoard #dah #dit {
+	align-self: center;
+	height: 70px;
+}
+#outputFieldMouse {
+	display: flex;
+	flex-direction: row;
+	width: 700px;
+	height: 70px;
+	justify-content: center;
+}

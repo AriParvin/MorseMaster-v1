@@ -1,0 +1,31 @@
+.textFree {
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0px;
+	align-self: center;
+	height: 300px;
+	width: 800px;
+	border-style: solid;
+	border-radius: 25px;
+}
+.textFree p {
+	line-height: 90%;
+	height: 0;
+	padding: 0px;
+	display: flex;
+	font-size: 2em;
+	margin: 0;
+	justify-content: center;
+}
+#outputFree {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-self: center;
+	padding-top: 25px;
+	justify-content: center;
+	height: 100px;
+	width: 700px;
+	border-radius: 25px;
+}
