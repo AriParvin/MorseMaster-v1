@@ -8,6 +8,9 @@ Mousetrap.bind("s", function() {
 		newSpace.innerText = " "
 		textFree.appendChild(newSpace)
 	}
+	if (gameTypes.morseMaster) {
+		randomWord()
+	}
 })
 
 Mousetrap.bind("backspace", function() {
@@ -66,11 +69,6 @@ Mousetrap.bind("space", function() {
 			pSlice++
 			nextMasterWord()
 		}
-
-
-
-
-
 	} else if (gameTypes.morseMouse) {
 		outputFieldMouse.remove()
 		createFieldMouse()

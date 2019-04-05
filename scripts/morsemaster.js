@@ -1,7 +1,6 @@
-var pSlice;
-var tempRandom;
+var pSlice
+var tempRandom
 var success = true
-
 
 //Morse Master INIT
 const startMorseMaster = () => {
@@ -16,25 +15,24 @@ const startMorseMaster = () => {
 //Prompted text in Morse Master
 const masterInstructions = () => {
 	var x = document.querySelector(".promptField")
-	x.innerText = "Press space to start.."
+	x.innerText = "Press space to start"
 }
 
 const nextMasterWord = () => {
-
 	var x = document.querySelector(".promptField")
 	x.innerHTML = randomWord()
+	// if (document.querySelector('body > div.promptField > p > span'))
 }
 const randomWord = () => {
-	console.log("line 27, master",success)
-	if (success){
+	console.log("line 27, master", success)
+	if (success) {
 		console.log("line 29, master")
 		tempRandom = masterWords[(masterWords.length * Math.random()) << 0]
 		success = false
 		pSlice = 0
 	}
 
-	
-	return `<p><span style="color:green">${tempRandom.slice(0,pSlice)}</span>${tempRandom.slice(pSlice)}</p>`
+	return `<p><span style="color:darkgrey">${tempRandom.slice(0, pSlice)}</span>${tempRandom.slice(pSlice)}</p>`
 	/* ${conStr.join("")} */
 }
 //Prompt Field Morse Master
@@ -55,4 +53,3 @@ const createPromptOutput = () => {
 	promptOutputVar.classList.add("promptOutputField")
 	document.body.appendChild(promptOutputVar)
 }
-

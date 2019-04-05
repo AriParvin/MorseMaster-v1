@@ -1,16 +1,25 @@
 .promptField {
+	font-family: "Varela Round", sans-serif;
 	display: flex;
 	flex-wrap: wrap;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 3em;
 	align-self: center;
 	justify-content: center;
-	padding: 70px 0 0 0;
+	padding: 60px 0 0 0;
 	width: 1000px;
 	height: 200px;
 	border-style: solid;
 	border-radius: 25px;
 }
+.promptField p {
+	position: relative;
+	bottom: 50px;
+	padding: 0;
+	font-size: 3em;
+	margin: 0;
+}
+
 .promptOutputField {
 	display: flex;
 	flex-wrap: wrap;
