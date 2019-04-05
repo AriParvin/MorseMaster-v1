@@ -1,3 +1,8 @@
+var pSlice;
+var tempRandom;
+var success = true
+
+
 //Morse Master INIT
 const startMorseMaster = () => {
 	gameTypes.morseMaster = true
@@ -14,22 +19,23 @@ const masterInstructions = () => {
 	x.innerText = "Press space to start.."
 }
 
-const createSpan = () => {
-	document.querySelector(".promptField")
-	var span = document.createElement("SPAN")
-	span.classList.add("span")
-	return document.querySelector(".promptField").appendChild(span)
-}
-
 const nextMasterWord = () => {
-	createSpan()
 
-	var x = document.querySelector(".span")
-	x.innerText = randomWord()
+	var x = document.querySelector(".promptField")
+	x.innerHTML = randomWord()
 }
 const randomWord = () => {
-	var random = masterWords[(masterWords.length * Math.random()) << 0]
-	return random
+	console.log("line 27, master",success)
+	if (success){
+		console.log("line 29, master")
+		tempRandom = masterWords[(masterWords.length * Math.random()) << 0]
+		success = false
+		pSlice = 0
+	}
+
+	
+	return `<p><span style="color:green">${tempRandom.slice(0,pSlice)}</span>${tempRandom.slice(pSlice)}</p>`
+	/* ${conStr.join("")} */
 }
 //Prompt Field Morse Master
 const createPromptField = () => {
@@ -50,10 +56,3 @@ const createPromptOutput = () => {
 	document.body.appendChild(promptOutputVar)
 }
 
-// for (var i = 0; i < wordArray.length; i++) {
-// 	//building the words with spans around the letters
-// 	var span = document.createElement("span")
-// 	span.classList.add("span")
-// 	span.innerHTML = wordArray[i]
-// }
-// spans = document.querySelectorAll(".span")

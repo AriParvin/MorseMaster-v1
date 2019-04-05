@@ -61,6 +61,16 @@ Mousetrap.bind("space", function() {
 		tempStr = []
 		document.querySelector(".promptOutputField").remove()
 		createPromptOutput()
+
+		if (conStr[conStr.length - 1] == tempRandom[pSlice]) {
+			pSlice++
+			nextMasterWord()
+		}
+
+
+
+
+
 	} else if (gameTypes.morseMouse) {
 		outputFieldMouse.remove()
 		createFieldMouse()
