@@ -17,6 +17,10 @@ const createGameBoard = () => {
 	var gameBoardVar = document.createElement("div")
 	gameBoardVar.classList.add("gameBoard")
 	document.body.appendChild(gameBoardVar)
+	//score counter
+	// var scoreCounter = document.createElement("div")
+	// gameBoardVar.classList.add("counter")
+	// document.body.appendChild(gameBoardVar)
 
 	var inputFieldVar = document.createElement("div")
 	inputFieldVar.id = "inputField"

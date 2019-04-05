@@ -56,9 +56,10 @@ Mousetrap.bind("space", function() {
 	assignChar(tempStr.join(""))
 	if (gameTypes.morseMasterInstructions) {
 		gameTypes.morseMasterInstructions = false
-		nextMasterString()
+		nextMasterWord()
 	} else if (gameTypes.morseMaster) {
-		promptOutputField.remove()
+		tempStr = []
+		document.querySelector(".promptOutputField").remove()
 		createPromptOutput()
 	} else if (gameTypes.morseMouse) {
 		outputFieldMouse.remove()

@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 }
 body {
-	-webkit-animation: fadein 4s;
+	-webkit-animation: fadein 0s;
 	display: flex;
 	width: 100vw;
 	flex-direction: column;
@@ -45,6 +45,7 @@ body {
 	border-color: #e51d1d;
 	border-width: 2px;
 	transition-duration: 200ms;
+	margin-bottom: 20px;
 }
 #pageReload:hover {
 	border-radius: 0px;
@@ -134,7 +135,7 @@ div #desc-space {
 	width: 33.3vw;
 }
 .selection {
-	-webkit-animation: fadein 4s;
+	-webkit-animation: fadein 0s;
 	display: flex;
 	flex-flow: column;
 	height: 250px;
