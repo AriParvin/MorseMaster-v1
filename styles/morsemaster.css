@@ -6,17 +6,15 @@
 	font-size: 3em;
 	align-self: center;
 	justify-content: center;
-	padding: 60px 0 0 0;
-	width: 1000px;
-	height: 200px;
+	height: auto;
 	border-style: solid;
 	border-radius: 25px;
+	padding: 25px;
 }
 .promptField p {
 	position: relative;
-	bottom: 50px;
-	padding: 0;
 	font-size: 3em;
+	padding: 25px;
 	margin: 0;
 }
 
